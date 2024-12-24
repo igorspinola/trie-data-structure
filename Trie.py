@@ -1,25 +1,26 @@
-from typing import List
 from No import No
 
 class Trie:
     def __init__(self) -> None:
-        self.raiz = No()
+        self.raiz: No = No()
         i: int = 97
+
         while i < 123:
            self.raiz.ref.append(No(chr(i)))
            i += 1
 
-    def insere(self, palavra: str) -> List[str]:
-        # early return caso já esteja na trie
-        atual = self.raiz
-        for letra in palavra:
-            if letra in atual.ref.chave:
-                continue
+    def insere(self, palavra: str) -> str:
+        output: str = "palavra ja existente: " + palavra
+        atual: No = self.raiz
 
-            i: int = 0
-            while i < 27:
-                atual = atual.ref[i]
-                if atual.chave == letra:
-                    break
-                i += 1
-        return [""]
+        for le in palavra:
+            if len(atual.ref) == 0:
+                for i in range(26):
+                    atual.ref.append(No(""))
+            indice = ord(le) - ord('a')
+            if atual.ref[indice].chave == "":
+                atual.ref[indice] = No(le)
+                output = "palavra inserida: " + palavra
+            atual = atual.ref[indice]
+
+        return output

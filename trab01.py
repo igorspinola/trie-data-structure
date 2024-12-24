@@ -2,19 +2,26 @@
 
 from Trie import Trie
 
-tr = Trie()
+tr: Trie = Trie()
 #print(*tr.raiz.ref)
-for n in tr.raiz.ref:
-    print("chave:" + n.chave)
-print("raiz:" + tr.raiz.chave)
+#for n in tr.raiz.ref:
+#    print("chave:" + n.chave)
+#print("raiz:" + tr.raiz.chave)
 
-# def comando(cmd: str = ""):
-#     if cmd == "":
-#         return
+entrada: str = input()
 
-#     return {
-#         "p": "fazer",
-#         "c": "fazer",
-#         "f": "fazer",
-#         "e": "fazer",
-#         }[cmd]
+while entrada != 'e':
+
+    if entrada == 'i':
+        arg = input()
+        print(tr.insere(arg))
+    elif entrada == 'c':
+        pass
+    elif entrada == 'f':
+        pass
+    elif entrada == 'p':
+        pass
+    else:
+        pass
+
+    entrada = input()
