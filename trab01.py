@@ -34,7 +34,7 @@ while entrada != 'e':
                 print(e)
             print("numero de acessos: " + str(result_f[1]))
     elif entrada == 'p':
-        pass
+        tr.imprimir_arvore()
     else:
         pass
 
