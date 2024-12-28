@@ -1,16 +1,8 @@
 # Versao do Python: 3.10.12
-
 from typing import List
 from Trie import Trie
 
 tr: Trie = Trie()
-
-#print(*tr.raiz.ref)
-#for n in tr.raiz.ref:
-#    print("chave:" + n.chave)
-#print("raiz:" + tr.raiz.chave)
-
-# guardar resultados pra printar tudo junto no final
 
 entrada: str = input()
 
